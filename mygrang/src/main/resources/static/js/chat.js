@@ -1,3 +1,5 @@
+const currentHostname = window.location.hostname;
+console.log(currentHostname)
 const index1 = {
     isExit : false,
     init: function () {
