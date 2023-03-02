@@ -1,0 +1,555 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button i{
+    pointer-events:none;
+}
+header {
+    background-color: transparent;
+}
+.h_m_list > li a {
+    color: #fff;
+}
+.h_nav_list > li a {
+    color: #fff;
+}
+
+.wrap {
+    width: 100%;
+    height: 94vh;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #3ded97, #2ddbdc);
+}
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-wrapper .swiper-slide .inner {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: 1s;
+}
+
+.r_title {
+    display: flex;
+    align-items: center;
+}
+
+.r_title img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.img_zone{
+    width: 100%;
+    height: 60vh;
+    overflow: scroll;
+    border-radius: 5%;
+}
+.img_zone::-webkit-scrollbar{
+    /* width:10px; */
+    display: none;
+}
+.reply_wrap::-webkit-scrollbar{
+    width:10px;
+}
+
+.reply_wrap::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    background-color: skyblue;
+}
+
+.reply_wrap::-webkit-scrollbar-track{
+    background: #eee;
+    border-radius: 5px;
+}
+
+@media all and (min-width: 320px) {
+    .swiper-wrapper .swiper-slide {
+        width: 300px;
+        height: 500px;
+        position: relative;
+        top: 10%;
+        left: -40px;
+    }
+    .swiper-button-prev {
+        display: none;
+    }
+    .swiper-button-next {
+        display: none;
+    }
+
+    /*폼 css*/
+    .replyform {
+        margin: 0 auto;
+        padding: 15px 10px;
+        width: 400px;
+        height: 80vh;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        justify-content: center;
+    }
+
+    .r_title {
+        width: 100%;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .r_img {
+        position: relative;
+        width: 90%;
+        height: auto;
+        font-size: 22px;
+    }
+
+    .like {
+        background: none;
+        cursor: pointer;
+        font-size: 20px;
+        border: none;
+    }
+
+    .r_img img {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .r_img__heart {
+        display: flex;
+        margin-top: 5px;
+    }
+
+    .fa-heart {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .fa-heart--red {
+        animation: 1s slidein;
+        animation-fill-mode: backwards;
+        color: red;
+    }
+
+    @keyframes slidein {
+        from {
+            color: white;
+        }
+
+        to {
+            color: red;
+        }
+    }
+
+    .r_info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 83%;
+        height:40px;
+        background: #fff;
+        border-radius: 25px;
+        padding: 15px;
+    }
+
+    .heart_cnt{
+        background: none;
+        padding: 0;
+        border: none;
+    }
+    .r_reply {
+        display: none;
+    }
+
+    .r_info_label .r_info_title{
+        display: none;
+    }
+
+    .r_reply_input .add_reply{
+        width: 240px;
+    }
+    .replyform input {
+        width: 70%;
+        background-color: #fff;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, -1);
+        border: 0;
+        outline: 0;
+        padding: 17px 18px;
+    }
+
+    .r_btn-save {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border: 0;
+        outline: 0;
+        padding: 0;
+        transition: all 200ms ease-in;
+        cursor: pointer;
+        background: #3ded97;
+        color: #fff;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        opacity: 0.7;
+    }
+
+    .r_btn-save:hover {
+        opacity: 1;
+    }
+    .f_nav {
+        display: block;
+    }
+    .f_nav_list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5px;
+    }
+    .f_nav_list li {
+        margin: 10px;
+        transition: all 0.5s;
+    }
+
+    .f_nav_list li a {
+        font-size: 25px;
+        color: #3ded97;
+    }
+
+    .f_nav_list li:hover {
+        transform: scale(1.3);
+    }
+}
+@media all and (min-width: 1024px) {
+    .wrap {
+        height: 100vh;
+    }
+    .m_btn {
+        color: #fff;
+    }
+
+    .swiper-wrapper .swiper-slide {
+        width: 900px;
+        height: 700px;
+        position: relative;
+        top: 50%;
+        margin-top: -35vh;
+        left: -13px;
+    }
+
+    .swiper-button-prev {
+        display: block;
+        left: auto;
+        right: 100px;
+        top: auto;
+        bottom: 50px;
+        filter: grayscale(100%) brightness(3);
+        transform: scale(0.5);
+    }
+    .swiper-button-next {
+        display: block;
+        left: auto;
+        right: 60px;
+        top: auto;
+        bottom: 50px;
+        filter: grayscale(100%) brightness(3);
+        transform: scale(0.5);
+    }
+    /* 폼 css */
+    .replyform {
+        justify-content: center;
+        margin: 0 auto;
+        padding: 20px;
+        width: 900px;
+        height: 70vh;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .r_title {
+        width: 100%;
+        height: 20px;
+        padding-left:20px;
+    }
+
+    .r_img {
+        position: relative;
+        width: 45%;
+        height: 60vh;
+        margin-right: 10px;
+        font-size: 30px;
+    }
+
+    .r_img .img_zone img {
+        width: 100%;
+        height: 50vh;
+        object-fit: contain;
+        margin-top: 10px;
+    }
+
+    .r_img__heart{
+        font-size:30px;
+        height: 30px;
+    }
+
+    .r_img__heart .heart_cnt{
+        margin-top:-5px;
+        margin-left:-15px;
+        background: none;
+        border: none;
+        color:black;
+        font-size:30px;
+    }
+
+    .r_info {
+        display: flex;
+        flex-wrap: wrap;
+        width: 45%;
+        height: 60vh;
+        background: #fff;
+        border-radius: 25px;
+        padding: 20px;
+    }
+
+    .r_info_label .r_info_title{
+        display: block;
+        text-overflow: ellipsis;
+        /*display: -webkit-box;*/
+        word-wrap:break-word;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    .r_info_label .r_info_title::-webkit-scrollbar{
+        width: 5px;
+    }
+
+    .r_info_label .r_info_title::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        background-color: skyblue;
+    }
+
+    .r_info_label .r_info_title::-webkit-scrollbar-track{
+        background: #eee;
+        border-radius: 5px;
+    }
+
+    .replyform input {
+        width: 70%;
+        height: 5px;
+        background-color: #fff;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, -1);
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+        padding: 22px 18px;
+    }
+
+    .r_btn-save {
+        margin-top: 10px;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border: 0;
+        outline: 0;
+        padding: 0;
+        transition: all 200ms ease-in;
+        cursor: pointer;
+        background: #3ded97;
+        color: #fff;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        opacity: 0.7;
+    }
+    /*css 추가  */
+
+    .reply_wrap{
+        width: 100%;
+        height: 300px;
+        overflow: auto;
+    }
+
+    .r_reply{
+        width: 98%;
+        height: auto;
+        border-bottom: 1px solid #3ded97;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .r_profile{
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .r_profile .r_p_img img{
+        height : 25px;
+        width : 25px;
+        line-height : 20px;
+        cursor : pointer;
+        border-radius : 50%;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .r_profile .r_p_name{
+        font-size: 15px;
+        font-weight : bold;
+        color : #83878d;
+    }
+
+    .r_content{
+        width: 70%;
+    }
+
+    .r_c_content{
+        width: 100%;
+    }
+
+    .c_content{
+        width: 100%;
+        line-height: 25px;
+        height: 50px;
+        margin-left:5px;
+        resize: none;
+        overflow: hidden;
+        border:none;
+        text-overflow: ellipsis;
+        /*white-space: nowrap;*/
+        display: -webkit-box;
+        word-wrap:break-word;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        outline: none;
+    }
+
+    .c_content::-webkit-scrollbar{
+        width: 5px;
+    }
+
+    .c_content::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        background-color: skyblue;
+    }
+
+    .c_content::-webkit-scrollbar-track{
+        background: #eee;
+        border-radius: 5px;
+    }
+
+    .change_content{
+        width: 100%;
+        line-height: 25px;
+        height: 50px;
+        margin-left:5px;
+        resize: none;
+        border:none;
+    }
+
+    .r_c_more, .r_c_more_cancle{
+        background: none;
+        float:right;
+        border: none;
+        cursor: pointer;
+        font-size:13px;
+        color:skyblue;
+        font-weight: bold;
+        margin-right:2px;
+        margin-bottom: 5px;
+    }
+
+    .edit_zone input{
+        padding: 0;
+        border:1px solid #b7b7b7;
+        border-radius: 5px;
+        height:20px;
+        margin-bottom: 10px;
+    }
+
+    .edit_zone button{
+        margin-left: -5px;
+        width:35px;
+        height:25px;
+        background: none;
+        border:none;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    .edit_zone button:hover{
+        background: #b7b7b7;
+        color: white;
+    }
+
+    .r_btn button{
+        background: none;
+        margin-bottom:10px;
+        height: 20px;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    .r_btn button:hover{
+        background: #b7b7b7;
+        color: white;
+    }
+
+    .r_btn{
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reply_control{
+        width: 10%;
+    }
+
+    .r_reply_input .add_reply{
+        width: 320px;
+        height: 30px;
+        border: 1px solid;
+        padding: 1px;
+        padding-left : 10px;
+        border-radius : 10px;
+        padding-right : 10px;
+    }
+
+    .r_btn-save:hover {
+        opacity: 1;
+    }
+    /* 폼 css  끝*/
+
+    .f_nav {
+        display: none;
+    }
+
+
+}

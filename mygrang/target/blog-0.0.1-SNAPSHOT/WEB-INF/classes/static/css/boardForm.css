@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+header {
+  background-color: #fff;
+}
+
+.board_wrap {
+  display: flex;
+}
+
+@font-face {
+  font-family: "BMJUA";
+  src: url("../fonts/BMJUA_ttf.ttf") format("opentype");
+}
+.board_wrap {
+  font-family: "BMJUA";
+  top: 20px;
+}
+@media all and (min-width: 320px) {
+  /* 파일 업로드 css */
+  #image_preview .upload-name {
+    margin-top: 5px;
+    margin-left: 1%;
+    display: inline-block;
+    height: 40px;
+    padding: 0 15px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 80%;
+    color: #999999;
+    line-height: 40px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  #image_preview input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+  #image_preview h4 {
+    margin-left: 1%;
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 22px;
+    color: black;
+  }
+  #att_zone {
+    width: 95%;
+    min-height: 150px;
+    padding: 10px;
+    border: 1px dotted;
+    font-size: 15px;
+    color: #ccc;
+    margin: auto;
+  }
+  #att_zone2 {
+    display: flex;
+    margin-top: 10px;
+  }
+  #att_zone p :empty:before {
+    color: #999;
+  }
+  #att_zone p {
+    display: none;
+    text-align: center;
+  }
+
+  /* 파일 업로드 css 끝 */
+  .b_label {
+    font-size: 22px;
+    width: 100%;
+    height: 20px;
+    padding: 10px 10px 0px 10px;
+  }
+
+  .b_title {
+    width: 70%;
+    height: 30px;
+    margin-left: 1%;
+  }
+
+  .b_info {
+    width: 100%;
+  }
+  .b_info h4 {
+    color: blueviolet;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+  .b_info textarea {
+    width: 97%;
+    margin-top: 10px;
+    resize: none;
+    padding: 10px;
+  }
+
+  .b_btn-save:hover {
+    opacity: 1;
+  }
+
+  .board_wrap {
+    padding-bottom: 15px;
+    position: relative;
+    background: linear-gradient(45deg, #3ded97, #2ddbdc);
+    display: flex;
+  }
+}
+
+.f_nav {
+  background-color: #fff;
+}
+
+header {
+  padding-bottom: 10px;
+}
+.board {
+  max-width: 500px;
+  width: 70%;
+  margin: 100px auto;
+  margin-bottom: 10px;
+  height: 71%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#image_preview .upload-name {
+  margin-top: 5px;
+  margin-left: 6px;
+  height: 40px;
+  padding: 0 10px;
+  vertical-align: middle;
+  border: 1px solid #dddddd;
+  width: 88%;
+  color: #ccc;
+  line-height: 40px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px;
+}
+#image_preview label {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #3ded97;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-left: 13px;
+  font-size: 20px;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+#image_preview input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+#image_preview h4 {
+  margin-left: 1%;
+  margin-bottom: 8px;
+  font-weight: normal;
+  font-size: 22px;
+  color: black;
+}
+#att_zone {
+  overflow: auto;
+  display: flex;
+  width: 95%;
+  border: 1px dotted;
+  font-size: 15px;
+  color: #ccc;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+#att_zone:empty:before {
+  content: attr(data-placeholder);
+  color: #999;
+  font-size: 0.9em;
+}
+#att_zone p {
+  display: block;
+  text-align: center;
+}
+/* 파일 업로드 css 끝 */
+.b_label {
+  width: 100%;
+  height: 20px;
+  padding: 10px 10px 0px 10px;
+}
+
+.b_title {
+  width: 98%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.b_title:focus {
+  background-color: #3ded9722;
+  transition: 1s;
+}
+
+.b_title::placeholder {
+  padding: 5px;
+}
+
+.b_info {
+  width: 100%;
+}
+.b_info h4 {
+  color: blueviolet;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 1%;
+  font-size: 22px;
+}
+.b_info textarea {
+  width: 95.5%;
+  margin-top: 10px;
+  margin-left: 4px;
+  resize: none;
+  padding: 10px;
+}
+
+.b_btn-save {
+  margin-top: 10px;
+  width: 70px;
+  height: 40px;
+  display: inline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+  background: #3ded97;
+  color: #fff;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  opacity: 0.7;
+  float: right;
+}
+.board_wrap {
+  background: linear-gradient(45deg, #3ded97, #2ddbdc);
+}
+.b_btn-save:hover {
+  opacity: 1;
+}
+
+.introduce {
+  padding-top: 10px;
+}
+
+.introduce textarea {
+  border-radius: 10px;
+  outline: none;
+}
+
+.footer {
+  top: 50px;
+  position: relative;
+}

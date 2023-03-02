@@ -1,0 +1,153 @@
+@media all and (min-width: 320px) {
+  .wrap {
+    border: 0.1px solid white;
+    margin: 0px auto;
+  }
+  header {
+    background-color: #fff;
+  }
+  .f_nav {
+    background-color: #fff;
+  }
+  a {
+    color: black;
+  }
+  .loginbox {
+    margin-top: 18vh;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    margin-left: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 150px;
+  }
+  .login_input {
+    border-radius: 3px;
+    border: 1px solid black;
+    outline: none;
+  }
+  .login_input:focus {
+    background-color: #3ded9740;
+    transition: 1s;
+  }
+  .box1 {
+    margin: 60px auto;
+    /* border : 1px solid black; */
+    width: 300px;
+    height: 60px;
+  }
+  .box1 > img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 0%;
+  }
+  .box2 {
+    margin: 5px auto;
+    /* border : 1px solid black; */
+    width: 75%;
+    height: 60px;
+  }
+  .box2 input {
+    width: 95%;
+    height: 33px;
+  }
+  .box2 input::placeholder {
+    font-size: 12px;
+    font-weight: 100;
+    font-weight: bold;
+  }
+  .box3 {
+    margin: 5px auto;
+    /* border : 1px solid black; */
+    width: 75%;
+    height: 60px;
+  }
+  .box3 input {
+    width: 95%;
+    height: 33px;
+  }
+  .box3 input::placeholder {
+    font-size: 12px;
+    font-weight: 100;
+    font-weight: bold;
+  }
+  .box4 {
+    margin: 5px auto;
+    /* border : 1px solid black; */
+    width: 75%;
+    height: 60px;
+  }
+  .box5 {
+    margin: 5px auto;
+    /* border : 1px solid black; */
+    width: 75%;
+    height: 60px;
+  }
+  .ordinaryLogin {
+    height: 37px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 0px;
+    border-radius: 8px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .ordinaryLogin:hover{
+    background: #3ded97;
+    color: white;
+  }
+
+  .leftHr {
+    float: left;
+    width: 35%;
+    box-sizing: border-box;
+  }
+  .or {
+    float: left;
+    width: 17%;
+    margin: 2px 5%;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: #999999;
+    font-size: 15px;
+    font-weight: 700;
+    margin: -10px 30px;
+  }
+  .rightHr {
+    float: right;
+    width: 35%;
+    box-sizing: border-box;
+  }
+
+  .kakaotalk_login {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .kakaotalk_icon {
+  }
+
+  .haveAccount {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .singuplink{
+    color: #3ded97;
+    font-weight: bold;
+  }
+  /*  .noneunderline:hover{
+      background: #3ded97;
+    }*/
+  footer {
+    bottom: 0px;
+  }
+}
