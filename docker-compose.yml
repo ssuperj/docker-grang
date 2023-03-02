@@ -5,8 +5,8 @@ services:
     ports:
       - "27017:27017"
     restart: always
-    volumes:
-      - ./mongodb:/docker-entrypoint-initdb.d:ro,z
+    # volumes:
+    # - ./mongodb:/docker-entrypoint-initdb.d:ro,z
   #    networks:
   #      default_bridge:
   #        ipv4_address: 172.16.1.3
