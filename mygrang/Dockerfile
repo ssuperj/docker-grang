@@ -1,3 +1,3 @@
 FROM openjdk:11-jre
-COPY target/blog-*.war app.war
+COPY target/mygrang-*.war app.war
 ENTRYPOINT ["java", "-jar", "app.war"]
