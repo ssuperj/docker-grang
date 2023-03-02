@@ -4,6 +4,7 @@ services:
     build: ./mysql
     ports:
       - "3306:3306"
+    restart: always
   #    networks:
   #      default_bridge:
   #        ipv4_address: 172.16.1.2
@@ -11,6 +12,7 @@ services:
     build: ./mongodb
     ports:
       - "27017:27017"
+    restart: always
     volumes:
       - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
   #    networks:
@@ -30,6 +32,7 @@ services:
     build: ./chatapp
     ports:
       - "8100:8100"
+    restart: always
 #    networks:
 #      default_bridge:
 #        ipv4_address: 172.16.1.5
