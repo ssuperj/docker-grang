@@ -39,9 +39,10 @@ services:
 #        ipv4_address: 172.16.1.5
 #    networks:
 #      - my-network
+
 #networks:
-##  default_bridge:
-##    ipam:
-##      driver: default
-##      config:
-##        - subnet: 172.16.1.0/24
+#  default_bridge:
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 172.16.1.0/24
