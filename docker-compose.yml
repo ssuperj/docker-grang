@@ -28,6 +28,5 @@ services:
     build: ./chatapp
     #    environment:
     #      - MY_IP_ADDRESS=192.168.0.64
-
     ports:
       - "8100:8100"
