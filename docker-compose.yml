@@ -14,7 +14,7 @@ services:
       - "27017:27017"
     restart: always
     volumes:
-      - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro,z
+      - ./mongodb/mongo-init.d:/docker-entrypoint-initdb.d:ro
   #    networks:
   #      default_bridge:
   #        ipv4_address: 172.16.1.3
