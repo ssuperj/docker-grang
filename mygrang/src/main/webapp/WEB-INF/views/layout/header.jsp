@@ -1,12 +1,7 @@
 <%@ page import="java.net.InetAddress" %>
-<%@ page import="com.grang.config.Ipconfig" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-    System.out.println(Ipconfig.ip);
-%>
-<input type="hidden" value="${ip}">
 </head>
 <body>
 <header>

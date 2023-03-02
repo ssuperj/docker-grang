@@ -37,8 +37,8 @@ public class RoomController {
 
     @GetMapping("/detail/{id}")
     public String detail(@PathVariable int id, @AuthenticationPrincipal PrincipalDetail principalDetail, Model model) {
-        model.addAttribute("sendUser",principalDetail.getUser().getId());
-        model.addAttribute("recvUser", userService.회원찾기ById(id).getId());
+        model.addAttribute("sendUsers",principalDetail.getUser().getId());
+        model.addAttribute("recvUsers", userService.회원찾기ById(id).getId());
         return "/detail";
     }
 /*

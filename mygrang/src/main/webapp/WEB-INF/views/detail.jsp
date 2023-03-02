@@ -1,3 +1,4 @@
+<%@ page import="java.net.InetAddress" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
@@ -11,15 +12,14 @@
     <link rel="stylesheet" href="/css/detail.css" />
 </head>
 <body>
-<input type="hidden" id="sendUser" value="${sendUser}">
-<input type="hidden" id="recvUser" value="${recvUser}">
+<input type="hidden" id="sendUser" value="${sendUsers}">
+<input type="hidden" id="recvUser" value="${recvUsers}">
 <div class="container">
     <div class="msg-box">
     </div>
 </div>
-<script>
-    <%--const MY_IP_ADDRESS = '<%= System.getenv("MY_IP_ADDRESS") %>';--%>
+
+<script src="/js/detail.js">
 </script>
-<script src="/js/detail.js"></script>
 </body>
 </html>
