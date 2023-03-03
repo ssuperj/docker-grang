@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="drop-link">
+                <a class="drop-link">
                     <i class="fa-solid fa-magnifying-glass drop-icon" id="drop1"></i>
                     <ul class="drop-down remove">
                         <input type="text" class="drop-down__input"/>
@@ -60,7 +60,7 @@
                 </button>
             </li>
             <li>
-                <a href="" class="drop-link">
+                <a class="drop-link">
                     <i class="fa-solid fa-magnifying-glass drop-icon" id="drop2"></i>
                     <ul class="drop-down remove">
                         <input type="text" class="drop-down__input" onke/>
