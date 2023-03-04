@@ -8,8 +8,8 @@ pipeline {
         maven 'maven3'
     }
     environment {
-        WORK_SPACE = "/home/$USER/agent"
-        JAVA_HOME = tool('jdk11-agent')
+        WORK_SPACE = "/home/$USER/agent/workspace"
+        // JAVA_HOME = tool('jdk11-agent')
     }
     stages {
         stage('Docker') {
