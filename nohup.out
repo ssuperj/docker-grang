@@ -649,3 +649,5 @@ t=2023-03-05T03:00:28+0900 lvl=info msg="join connections" obj=join id=f93d20b21
 t=2023-03-05T03:00:28+0900 lvl=info msg="join connections" obj=join id=1d0bccab2136 l=[::1]:8080 r=112.149.65.175:56542
 t=2023-03-05T03:04:31+0900 lvl=info msg="join connections" obj=join id=919e19dad6af l=[::1]:8080 r=140.82.115.58:26377
 t=2023-03-05T03:04:34+0900 lvl=info msg="join connections" obj=join id=68846db38198 l=[::1]:8080 r=112.149.65.175:56542
+t=2023-03-05T03:05:50+0900 lvl=info msg="join connections" obj=join id=ff1286826f96 l=[::1]:8080 r=140.82.115.53:40935
+t=2023-03-05T03:06:04+0900 lvl=info msg="join connections" obj=join id=0d19228f6150 l=[::1]:8080 r=112.149.65.175:56542
