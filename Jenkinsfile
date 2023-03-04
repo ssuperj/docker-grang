@@ -8,7 +8,7 @@ pipeline {
         maven 'maven3'
     }
     environment {
-        // WORK_SPACE = "/opt/jenkins/workspace"
+        WORK_SPACE = "/home/$USER/agent"
         JAVA_HOME = tool('jdk11-agent')
     }
     stages {
