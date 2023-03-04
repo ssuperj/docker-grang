@@ -9,12 +9,11 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
-        // JAVA_HOME = tool('jdk11-agent')
+        JAVA_HOME = tool('jdk11-agent')
     }
     stages {
         stage('Docker') {
             steps {
-                sh 'echo $JAVA_HOME'
                 sh 'docker-compose down'
                 sh 'docker rmi -f docker-grang-mysql'
                 sh 'docker rmi -f docker-grang-mongodb'
