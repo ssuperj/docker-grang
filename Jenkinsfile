@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         label 'parallels'
-        dir '/home/parallels'
+        // dir '/home/parallels'
     }
     tools {
         jdk 'jdk11-agent'
