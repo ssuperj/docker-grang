@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Docker') {
             steps {
-                sh 'echo $WORK_SPACE'
+                sh 'echo $JAVA_HOME'
                 sh 'docker-compose down'
                 sh 'docker rmi -f docker-grang-mysql'
                 sh 'docker rmi -f docker-grang-mongodb'
