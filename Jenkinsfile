@@ -2,17 +2,14 @@ pipeline {
     agent { 
         label 'parallels'
     }
-    environment {
-        WORK_SPACE = "/home/$USER/agent/workspace"
-    }
     tools {
         jdk 'jdk11'
         maven 'maven3'
     }
     environment {
+        WORK_SPACE = "/home/$USER/agent/workspace"
         JAVA_HOME = tool('jdk11').getHome()
     }
-    stages 
     stages {
         stage('Checkout') {
             steps {
