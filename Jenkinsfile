@@ -1,7 +1,6 @@
 pipeline {
     agent { 
         label 'parallels'
-        // dir '/home/parallels'
     }
     tools {
         jdk 'jdk11-agent'
@@ -9,7 +8,6 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
-        // JAVA_HOME = tool('jdk11-agent')
     }
     stages {
         stage('Docker') {
@@ -27,9 +25,12 @@ pipeline {
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
             }
         }
-        stage('Run') {
+        stage('Run and Test') {
             steps {
-                sh 'cd $WORK_SPACE/docker-grang && docker-compose up -d'
+                sh 'cd $WORK_SPACE/docker-grang && docker-compose up'
+                sh 'sleep 10s'
+                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
             }
         }
     }

@@ -19,7 +19,7 @@ services:
     ports:
       - "8090:8090"
     restart: always
-    command: ["./bin/wait-for-it.sh", "mysql", "3306", "--", "java", "-jar", "myapp.jar"]
+    # command: ["./bin/wait-for-it.sh", "mysql", "3306", "--", "java", "-jar", "myapp.jar"]
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/my_db?useSSL=false&allowPublicKeyRetrieval=true
 
@@ -28,6 +28,6 @@ services:
     ports:
       - "8100:8100"
     restart: always
-    command: ["./bin/wait-for-it.sh", "mongodb", "27017", "--", "java", "-jar", "myapp.jar"]
+    # command: ["./bin/wait-for-it.sh", "mongodb", "27017", "--", "java", "-jar", "myapp.jar"]
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/chatdb
