@@ -3,12 +3,12 @@ pipeline {
         label 'parallels'
     }
     tools {
-        jdk 'jdk11'
+        jdk 'jdk8-agent'
         maven 'maven3'
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
-        JAVA_HOME = tool('jdk11')
+        JAVA_HOME = tool('jdk8-agent')
     }
     stages {
         stage('Docker') {
