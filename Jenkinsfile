@@ -1,8 +1,8 @@
 pipeline {
     agent { 
         label 'parallels'
-        dir '/home/$USER'
-        }
+        // dir '/home/$USER'
+    }
     environment {
         WORK_SPACE = "/home/$USER/workspace"
     }
