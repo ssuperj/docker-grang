@@ -1,10 +1,9 @@
 pipeline {
     agent { 
         label 'parallels'
-        // dir '/home/$USER'
     }
     environment {
-        WORK_SPACE = "/home/$USER/workspace"
+        WORK_SPACE = "/home/$USER/agent/workspace"
     }
     tools {
         jdk 'jdk11'
