@@ -23,10 +23,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd $WORK_SPACE/docker-grang/mygrang'
-                sh 'mvn clean package -Dmaven.test.skip=true'
-                sh 'cd $WORK_SPACE/docker-grang/chatapp'
-                sh 'mvn clean package -Dmaven.test.skip=true'
+                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
+                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
             }
         }
         stage('Run') {
@@ -36,4 +34,3 @@ pipeline {
         }
     }
 }
-
