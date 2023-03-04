@@ -13,6 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh 'echo $JAVA_HOME'
                 checkout scm
             }
         }
@@ -33,7 +34,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh '/$WORK_SPACE/docker-grang && docker-compose up'
+                sh '$WORK_SPACE/docker-grang && docker-compose up'
             }
         }
     }
