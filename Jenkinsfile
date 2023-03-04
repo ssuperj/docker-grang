@@ -1,13 +1,14 @@
 pipeline {
     agent { 
         label 'parallels'
+        dir '/home/parallels'
     }
     tools {
         jdk 'jdk11-agent'
         maven 'maven3'
     }
     environment {
-        WORK_SPACE = "/opt/jenkins/workspace"
+        // WORK_SPACE = "/opt/jenkins/workspace"
         JAVA_HOME = tool('jdk11-agent')
     }
     stages {
@@ -29,7 +30,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh '$WORK_SPACE/docker-grang && docker-compose up'
+                sh '$WORK_SPACE/docker-grang && docker-compose up -d'
             }
         }
     }
