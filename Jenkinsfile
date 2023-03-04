@@ -8,6 +8,7 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
+        JAVA_HOME = tool('jdk11')
     }
     stages {
         stage('Docker') {
