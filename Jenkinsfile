@@ -8,13 +8,17 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
-        JAVA_HOME = tool('jdk11').getHome()
+        // JAVA_HOME = tool('jdk11').getHome()
     }
     stages {
         stage('Checkout') {
             steps {
-                sh 'echo $JAVA_HOME'
-                checkout scm
+                script {
+                    def jdk = tool 'jdk11'
+                    withEnv(['JAVA_HOME=' + jdk]) {
+                        sh 'java -version'
+                    }
+                }
             }
         }
         stage('Docker') {
