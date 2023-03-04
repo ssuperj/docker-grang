@@ -13,6 +13,7 @@ pipeline {
     stages {
         stage('Docker') {
             steps {
+                sh 'echo $WORK_SPACE'
                 sh 'docker-compose down'
                 sh 'docker rmi -f docker-grang-mysql'
                 sh 'docker rmi -f docker-grang-mongodb'
@@ -22,10 +23,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withEnv(['JAVA_HOME=' + tool('jdk11')]) {
-                    sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
-                    sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
-                }
+                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
+                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
             }
         }
         stage('Run') {
