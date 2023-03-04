@@ -39,3 +39,4 @@ out/
 ### my ###
 .DS_Store
 target/
+nohup.out
