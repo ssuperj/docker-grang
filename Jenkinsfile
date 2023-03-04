@@ -8,19 +8,9 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
-        // JAVA_HOME = tool('jdk11').getHome()
+        JAVA_HOME = tool 'jdk11'
     }
     stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    def jdk = tool 'jdk11'
-                    withEnv(['JAVA_HOME=' + jdk]) {
-                        sh 'java -version'
-                    }
-                }
-            }
-        }
         stage('Docker') {
             steps {
                 sh 'docker-compose down'
