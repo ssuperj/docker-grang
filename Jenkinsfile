@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh '$WORK_SPACE/docker-grang && docker-compose up -d'
+                sh 'cd $WORK_SPACE/docker-grang && docker-compose up -d'
             }
         }
     }
