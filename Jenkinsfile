@@ -9,6 +9,10 @@ pipeline {
         jdk 'jdk11'
         maven 'maven3'
     }
+    environment {
+        JAVA_HOME = tool('jdk11').getHome()
+    }
+    stages 
     stages {
         stage('Checkout') {
             steps {
