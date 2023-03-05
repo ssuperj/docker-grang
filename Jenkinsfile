@@ -40,13 +40,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '''
-                    cd $WORK_SPACE/docker-grang && docker-compose up -d
-                    until $(curl --output /dev/null --silent --head --fail http://localhost:8090); do
-                    printf '.'
-                    sleep 5
-                    done
-                '''
+                script {
+                    retry(3) {
+                        sh '''
+                            cd $WORK_SPACE/docker-grang && docker-compose up -d
+                            until $(curl --output /dev/null --silent --head --fail http://localhost:8090); do
+                            printf '.'
+                            sleep 5
+                            done
+                        '''
+                    }
+                }
             }
         }
     }
