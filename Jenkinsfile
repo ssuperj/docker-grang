@@ -41,12 +41,12 @@ pipeline {
         //         expression { /* currentBuild.result == null ||  */currentBuild.result == 'FAILURE' }
         //     }
         // }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                input message: 'Do you want to proceed?', ok: 'Yes, deploy!', submitter: 'deployer'
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploying...'
+        //         input message: 'Do you want to proceed?', ok: 'Yes, deploy!', submitter: 'deployer'
+        //     }
+        // }
             // steps {
             //     sh '''
             //         cd $WORK_SPACE/docker-grang && docker-compose up -d
