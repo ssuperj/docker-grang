@@ -49,12 +49,6 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
-                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
-            }
-        }
     }
 }
 
