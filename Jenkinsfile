@@ -26,11 +26,22 @@ pipeline {
             }
         }
         stage('Run and Test') {
+            // steps {
+            //     sh 'cd $WORK_SPACE/docker-grang && docker-compose up'
+            //     sh 'sleep 10s'
+            //     sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+            //     sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+            // }
             steps {
-                sh 'cd $WORK_SPACE/docker-grang && docker-compose up'
-                sh 'sleep 10s'
-                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
-                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+                sh '''
+                    cd $WORK_SPACE/docker-grang && docker-compose up -d
+                    until $(curl --output /dev/null --silent --head --fail http://localhost:8080); do
+                    printf '.'
+                    sleep 5
+                    done
+                    cd $WORK_SPACE/docker-grang/mygrang && mvn test
+                    cd $WORK_SPACE/docker-grang/chatapp && mvn test
+                '''
             }
         }
     }
