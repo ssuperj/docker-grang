@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Run and Test') {
             steps {
-                sh 'cd $WORK_SPACE/docker-grang && docker-compose up'
+                sh 'cd $WORK_SPACE/docker-grang && docker-compose up -d'
                 sh 'sleep 10s'
                 sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
