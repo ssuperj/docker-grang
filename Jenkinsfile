@@ -10,14 +10,16 @@ pipeline {
         WORK_SPACE = "/home/$USER/agent/workspace"
     }
     stages {
-        stage('PreTest') {
+        stage('Test') {
             steps {
-                try {
-                    sh 'curl --output /dev/null --silent --head --fail http://localhost:8090'
-                    sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
-                    sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
-                } catch (Exception e) {
-                    echo 'I can\'t test because the application is not running'
+                script {
+                    try {
+                        sh 'curl --output /dev/null --silent --head --fail http://localhost:8090'
+                        sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+                        sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+                    } catch (Exception e) {
+                        echo 'I can\'t test because the application is not running'
+                    }
                 }
             }
         }
