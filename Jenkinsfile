@@ -38,7 +38,7 @@ pipeline {
                 sh 'docker-compose stop'
             }
             when {
-                expression { currentBuild.result == null || currentBuild.result == 'FAILURE' }
+                expression { /* currentBuild.result == null ||  */currentBuild.result == 'FAILURE' }
             }
         }
             // steps {
