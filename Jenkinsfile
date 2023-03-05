@@ -10,7 +10,18 @@ pipeline {
         WORK_SPACE = "/home/$USER/agent/workspace"
     }
     stages {
-        stage('Docker') {
+        stage('PreTest') {
+            steps {
+                try {
+                    sh 'curl --output /dev/null --silent --head --fail http://localhost:8090'
+                    sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+                    sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+                } catch (Exception e) {
+                    echo 'I can\'t test because the application is not running'
+                }
+            }
+        }
+        stage('PreBuild') {
             steps {
                 sh 'docker-compose down'
                 sh 'docker rmi -f docker-grang-mysql'
@@ -42,33 +53,6 @@ pipeline {
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
             }
         }
-        
-        // stage('Stop Running Containers') {
-        //     steps {
-        //         sh 'docker-compose stop'
-        //     }
-        //     when {
-        //         expression { /* currentBuild.result == null ||  */currentBuild.result == 'FAILURE' }
-        //     }
-        // }
-        // stage('Deploy') {
-        //     steps {
-        //         echo 'Deploying...'
-        //         input message: 'Do you want to proceed?', ok: 'Yes, deploy!', submitter: 'deployer'
-        //     }
-        // }
-            // steps {
-            //     sh '''
-            //         cd $WORK_SPACE/docker-grang && docker-compose up -d
-            //         until $(curl --output /dev/null --silent --head --fail http://localhost:8080); do
-            //         printf '.'
-            //         sleep 5
-            //         done
-            //         cd $WORK_SPACE/docker-grang/mygrang && mvn test
-            //         cd $WORK_SPACE/docker-grang/chatapp && mvn test
-            //         cd $WORK_SPACE/docker-grang && docker-compose logs -f
-            //     '''
-            // }
     }
 }
 
