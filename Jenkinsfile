@@ -33,12 +33,18 @@ pipeline {
                 // sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
             }
         }
-        stage('Stop Running Containers') {
+        // stage('Stop Running Containers') {
+        //     steps {
+        //         sh 'docker-compose stop'
+        //     }
+        //     when {
+        //         expression { /* currentBuild.result == null ||  */currentBuild.result == 'FAILURE' }
+        //     }
+        // }
+        stage('Deploy') {
             steps {
-                sh 'docker-compose stop'
-            }
-            when {
-                expression { /* currentBuild.result == null ||  */currentBuild.result == 'FAILURE' }
+                echo 'Deploying...'
+                input message: 'Do you want to proceed?', ok: 'Yes, deploy!', submitter: 'deployer'
             }
         }
             // steps {
