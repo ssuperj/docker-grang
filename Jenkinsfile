@@ -25,14 +25,24 @@ pipeline {
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
             }
         }
-        stage('Run and Test') {
+        stage('Deploy') {
             steps {
-                sh 'cd $WORK_SPACE/docker-grang && docker-compose up -d'
-                // sh 'sleep 10s'
-                // sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
-                // sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+                sh '''
+                    cd $WORK_SPACE/docker-grang && docker-compose up -d
+                    until $(curl --output /dev/null --silent --head --fail http://localhost:8090); do
+                    printf '.'
+                    sleep 5
+                    done
+                '''
             }
         }
+        stage('Test') {
+            steps {
+                sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+                sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+            }
+        }
+        
         // stage('Stop Running Containers') {
         //     steps {
         //         sh 'docker-compose stop'
