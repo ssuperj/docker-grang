@@ -8,6 +8,7 @@ pipeline {
     }
     environment {
         WORK_SPACE = "/home/$USER/agent/workspace"
+        BASE_URL = "http://localhost"
     }
     stages {
         stage('Test') {
