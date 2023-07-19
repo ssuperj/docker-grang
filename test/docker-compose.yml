@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+    wg1:
+        build: ./wireguard
+        container_name: wg1
+        networks:
+            wg_net1:
+                ipv4_address: 172.21.0.2
+        ports:
+            - "2222:8090"
+        stdin_open: true
+        tty: true
+        cap_add:
+            - ALL
+        # command: sh -c "sh bootstrap.sh && tail -f /dev/null"
+    # wg2:
+    #     build: ./wireguard
+    #     container_name: wg2
+    #     networks:
+    #         wg_net2:
+    #             ipv4_address:
+    #                 172.22.0.2
+    #                 #ports:
+    #                 #            - "8090:8090"
+    #     stdin_open: true
+    #     tty: true
+    #     cap_add:
+    #         - ALL
+    #     command: sh -c "sh bootstrap.sh && tail -f /dev/null"
+
+networks:
+    wg_net1:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.21.0.0/16
+                  gateway: 172.21.0.1
+        # driver_opts:
+        #     parent: eth0
+    # wg_net2:
+    #     driver: bridge
+    #     ipam:
+    #         driver: default
+    #         config:
+    #             - subnet: 172.22.0.0/16
+    #               gateway: 172.22.0.1
+    #     driver_opts:
+    #         parent: eth0
+    # ipam:
+    #     config:
+    #         - subnet: 192.168.2.0/24
+    #           gateway: 192.168.2.1

@@ -1,33 +1,33 @@
 pipeline {
     agent { 
-        label 'parallels'
+        label 'grang'
     }
     tools {
         jdk 'jdk11-agent'
         maven 'maven3'
     }
     environment {
-        WORK_SPACE = "/home/$USER/agent/workspace"
+        WORK_SPACE = "/home/ssuperj/Desktop/shared/AllFiles/Users/jenkins/workspace"
         BASE_URL = "http://localhost"
     }
     stages {
-        stage('Test') {
-            steps {
-                script {
-                    try {
-                        sh 'curl --output /dev/null --silent --head --fail http://localhost:8090'
-                        echo 'Test Running'
-                        sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
-                        sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
-                    } catch (Exception e) {
-                        echo 'I can\'t test because the application is not running'
-                    }
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         script {
+        //             try {
+        //                 sh 'curl --output /dev/null --silent --head --fail http://localhost:8090'
+        //                 echo 'Test Running'
+        //                 sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn test'
+        //                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn test'
+        //             } catch (Exception e) {
+        //                 echo 'I can\'t test because the application is not running'
+        //             }
+        //         }
+        //     }
+        // }
         stage('PreBuild') {
             steps {
-                sh 'docker-compose down'
+                sh 'docker compose down ---dddd'
                 sh 'docker rmi -f docker-grang-mysql'
                 sh 'docker rmi -f docker-grang-mongodb'
                 sh 'docker rmi -f docker-grang-mygrang'
@@ -45,7 +45,7 @@ pipeline {
               script {
                     def deploy = {
                         sh '''
-                            cd $WORK_SPACE/docker-grang && docker-compose up -d
+                            cd $WORK_SPACE/docker-grang && docker compose up -d
                             until $(curl --output /dev/null --silent --head --fail http://localhost:8090); do
                                 printf '.'
                                 sleep 5
