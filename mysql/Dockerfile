@@ -6,9 +6,9 @@ ARG MYSQL_SHELL_PACKAGE=mysql-shell
 # Setup repositories for minimal packages (all versions)
 RUN rpm -U https://repo.mysql.com/mysql-community-minimal-release-el8.rpm \
   && rpm -U https://repo.mysql.com/mysql80-community-release-el8.rpm
-
+# microdnf date &&
 # Install server and shell 8.0
-RUN microdnf update && echo "[main]" > /etc/dnf/dnf.conf \
+RUN  echo "[main]" > /etc/dnf/dnf.conf \
   && microdnf install -y --enablerepo=mysql-tools-community $MYSQL_SHELL_PACKAGE \
   && microdnf install -y --disablerepo=ol8_appstream \
    --enablerepo=mysql80-community-minimal $MYSQL_SERVER_PACKAGE \

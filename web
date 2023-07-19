@@ -12,15 +12,15 @@ sleep 10
 ngrok_url="$(curl -sL http://localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url')"
 
 my_name="ssuperj"
-my_token="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"
+my_token="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"
 
 repositories=$(curl -H "Authorization: token ${my_token}" https://api.github.com/users/${my_name}/repos | jq -r '.[].name | select(. | startswith("docker-"))')
 
-echo ${repositories}
-for repo in ${repositories}
-do
-  hook_id=$(curl -H "Authorization: token ${my_token}" https://api.github.com/repos/${my_name}/${repo}/hooks | jq -r '.[] .id')
-if [ ! -z "$hook_id" ]; then
-  curl -X PATCH -H "Authorization: token ${my_token}" -H "Content-Type: application/json" https://api.github.com/repos/${my_name}/${repo}/hooks/${hook_id} -d '{"config": {"url": "'${ngrok_url}/github-webhook/'"}}'
-fi
-done
+# echo ${repositories}
+# for repo in ${repositories}
+# do
+#   hook_id=$(curl -H "Authorization: token ${my_token}" https://api.github.com/repos/${my_name}/${repo}/hooks | jq -r '.[] .id')
+# if [ ! -z "$hook_id" ]; then
+#   curl -X PATCH -H "Authorization: token ${my_token}" -H "Content-Type: application/json" https://api.github.com/repos/${my_name}/${repo}/hooks/${hook_id} -d '{"config": {"url": "'${ngrok_url}/github-webhook/'"}}'
+# fi
+# done
