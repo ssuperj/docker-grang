@@ -63,12 +63,6 @@ pipeline {
                             done
                         '''
                     }
-
-
-
-                    
-
-
                     
                     try {
                         deploy()
