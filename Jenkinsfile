@@ -1,4 +1,4 @@
-ypipeline {
+pipeline {
     agent { 
         label 'grang'
     }
@@ -46,6 +46,7 @@ ypipeline {
                 branch 'test'
             }
             steps {
+                
                 sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
             }
