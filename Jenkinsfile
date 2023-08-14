@@ -29,7 +29,9 @@ ypipeline {
         //     }
         // }
 
-        
+
+
+
         stage('PreBuild') {
             steps {
                 // sh 'docker compose down'
@@ -40,9 +42,9 @@ ypipeline {
             }
         }
         stage('Build') {
-            when {
-                branch 'dev'
-            }
+            // when {
+            //     branch 'dev'
+            // }
             steps {
                 sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
                 sh 'cd $WORK_SPACE/docker-grang/chatapp && mvn clean package -Dmaven.test.skip=true'
