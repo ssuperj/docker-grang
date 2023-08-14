@@ -10,7 +10,7 @@ ypipeline {
         WORK_SPACE = "/var/lib/jenkins/workspace"
         BASE_URL = "http://localhost"
     }
-    
+    //gaga
     stages {
         // stage('Test') {
         //     steps {
