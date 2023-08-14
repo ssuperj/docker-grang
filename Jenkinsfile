@@ -1,10 +1,10 @@
 pipeline {
-    agent { 
-        label 'grang'
-    }
+    agent {
+        label 'cent1'
+    } 
     tools {
         jdk 'jdk11-agent'
-        maven 'maven3'
+        maven 'Maven 3.9.4'
     }
     environment {
         WORK_SPACE = "/var/lib/jenkins/workspace"
@@ -25,9 +25,6 @@ pipeline {
         //         }
         //     }
         // }
-
-
-
 
 
 
