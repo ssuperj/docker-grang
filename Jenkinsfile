@@ -34,6 +34,8 @@ pipeline {
                 sh 'docker compose down --rmi all'
             }
         }
+
+        
         stage('Build') {
             steps {
                 sh 'cd $WORK_SPACE/docker-grang/mygrang && mvn clean package -Dmaven.test.skip=true'
