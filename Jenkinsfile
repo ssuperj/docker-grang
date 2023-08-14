@@ -1,4 +1,4 @@
-pipeline {
+ypipeline {
     agent { 
         label 'grang'
     }
@@ -7,9 +7,10 @@ pipeline {
         maven 'maven3'
     }
     environment {
-        WORK_SPACE = "/home/ssuperj/Desktop/shared/AllFiles/Users/jenkins/workspace"
+        WORK_SPACE = "/var/lib/jenkins/workspace"
         BASE_URL = "http://localhost"
     }
+    
     stages {
         // stage('Test') {
         //     steps {
@@ -27,11 +28,11 @@ pipeline {
         // }
         stage('PreBuild') {
             steps {
-                sh 'docker compose down ---dddd'
-                sh 'docker rmi -f docker-grang-mysql'
-                sh 'docker rmi -f docker-grang-mongodb'
-                sh 'docker rmi -f docker-grang-mygrang'
-                sh 'docker rmi -f docker-grang-chatapp'
+                // sh 'docker compose down'
+                // sh 'docker rmi -f docker-grang-mysql'
+                // sh 'docker rmi -f docker-grang-mongodb'
+                // sh 'docker rmi -f docker-grang-mygrang'
+                // sh 'docker rmi -f docker-grang-chatapp'
             }
         }
         stage('Build') {
@@ -45,7 +46,7 @@ pipeline {
               script {
                     def deploy = {
                         sh '''
-                            cd $WORK_SPACE/docker-grang && docker compose up -d
+                            cd $WORK_SPACE/docker-grang && docker compose up -d --build
                             until $(curl --output /dev/null --silent --head --fail http://localhost:8090); do
                                 printf '.'
                                 sleep 5
