@@ -11,6 +11,8 @@ ypipeline {
         BASE_URL = "http://localhost"
     }
     //gaga
+
+    
     stages {
         // stage('Test') {
         //     steps {
