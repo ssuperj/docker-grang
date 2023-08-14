@@ -66,6 +66,8 @@ pipeline {
                     
 
 
+
+
                     try {
                         deploy()
                     } catch (Exception e) {
@@ -83,4 +85,5 @@ pipeline {
         }
     }
 }
+
 
