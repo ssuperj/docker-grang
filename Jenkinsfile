@@ -31,9 +31,6 @@ pipeline {
 
 
 
-
-
-
         stage('PreBuild') {
             steps {
                 // sh 'docker compose down'
